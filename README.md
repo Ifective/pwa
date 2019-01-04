@@ -9,7 +9,7 @@ Uit onderzoek door Emerce B.V is gebleken dat wanneer de gebruiker een applicati
 
 Gelukkig bieden modern browsers steeds meer ondersteuning om een “app-like experience” te simuleren. Een recent toegevoegde functionaliteit is bijv. “add to home screen”
 
-**In dit blog gaan we onderzoeken of het mogelijk is om binnen een Angular applicatie een knop toe te voegen welke mobiele en tablet gebruikers de mogelijkheid biedt de applicatie toe te voegen aan zijn/haar startscherm.**
+**In dit blog gaan we onderzoeken of het mogelijk is om een Angular applicatie om te zetten naar een PWA zodat we Mobiele en tablet gebruikers de mogelijkheid kunnen bieden de applicatie toe te voegen aan zijn/haar startscherm.**
 
 ## De mogelijkheden van Angular
 
@@ -139,47 +139,20 @@ Vanaf Chrome versie 68, is er een event wat elke keer word getriggerd wanneer de
 
 Door gebruik te maken van een knop word de keuze over gelaten aan de gebruiker. Deze kan nu zelf bepalen wanneer hij de applicatie wil toevoegen aan het startscherm. In de bijgevoegde bestanden is deze code te bekijken.
 
-***app.compontent.html***
-In het HTML bestand voegen we een button toe die de gebruiker kan gebruiken om de pwa toe te voegen aan zijn startscherm. De knop maakt gebruik van het click event met daaraan een method installPwa gekoppeld. Wanneer de gebruiker op de knop klikt word deze method afgevuurd.
 
-***app.compontent.ts***
-In het bijbehorende component vangen we de installPwa method af en maken we gebruik van de PwaService om het prompt event te triggeren. Bovenin includen we de PwaService.
-
-***pwa.service.ts***
-In de PwaService luisteren we naar het beforeinstallprompt event. Dit event plaatsen we in de constructor zodat er direct naar dit event word geluisterd. Bovenin includen we de module BeforeInstallPromptEvent (dit is niet echt een module maar meer een type definitie).
-
-***BeforeInstallPromptEvent.ts***
-Het beforeinstallpromptevent is niet een standard event binnen Angular en word momenteel alleen ondersteund door Chrome en Android. Ook is het geen officiele type definitie binnen Typescript. Daarom is het nodig om dit type zelf te definieren.
-
-Wanneer je nu op de knop klikt gebeurt er op desktop nog niks. Dit is omdat de nieuwste versie van Chrome deze pwa functionaliteiten standard heeft uitgeschakeld. Momenteel vallen deze nog onder de “experimentele settings”. Om gebruik te maken van deze functionaliteiten en om te testen of de knop werkt kun je het volgende doen:
+***N.B*** *Standaard heeft Chrome PWA functionaliteiten uitgeschakeld. Wanneer je nu op de knop klikt gebeurt er op desktop nog niks. Dit is omdat de nieuwste versie van Chrome deze pwa functionaliteiten standard heeft uitgeschakeld. Momenteel vallen deze nog onder de “experimentele settings”. Om gebruik te maken van deze functionaliteiten en om te testen of de knop werkt kun je het volgende doen:*
 
 - ga naar chrome://flags
 - enable Bypass user engagement checks
 - enable Desktop PWAs
 
-![Chrome Flags](images/chrome-flags.png "chrome flags,settings pagina van chrome: hier kun je experimentele settings aan en uit zetten")
-
-***Afbeelding. 7***
-
-Wanneer je nu op de knop klikt zie je de volgende melding op desktop
-
-![Chrome Desktop Message](images/melding-pwa-desktop.png "Melding op desktop of de gebruiker de pwa wil installeren. Deze melding is default geblocked en kan alleen worden getriggerd door de hiervoor genoemde flags op enabled te zetten")
-
-***Afbeelding. 8***
-
-Dezelfde melding alleen nu op mobiel
-
-![Chrome Mobiel Message](images/melding-pwa-mobile.png "chrome flags,settings pagina van chrome: hier kun je experimentele settings aan en uit zetten")
-
 ## Conclusie
 
-Om terug te komen op de vraag of het mogelijk is om binnen een Angular applicatie een knop toe te voegen welke mobiele en tablet gebruikers de mogelijkheid biedt de webapplicatie toe te voegen aan zijn/haar startscherm is het antwoord ja, maar...
-
-
+Om terug te komen op de vraag of het mogelijk is om een Angular applicatie om te zetten naar een PWA een is het antwoord ja, maar...
 
 Momenteel word het beforeinstallpromptevent namelijk alleen in Chrome en Android browsers ondersteund. De overige browsers zoals Edge, Firefox, Opera, Safari, Samsung internet en UC Browser hanteren nl. andere criteria en hier word het `beforeinstallpromptevent` niet
 
-aangeroepen. Het is daarom ***niet*** mogelijk om in deze browsers een “custom knop” toe te voegen waarmee de gebruiker de applicatie kan toevoegen aan zijn startscherm.
+aangeroepen. Het is daarom bijvoorbeeld ***niet*** mogelijk om in deze browsers een “custom knop” toe te voegen waarmee de gebruiker de applicatie kan toevoegen aan zijn startscherm.
 
 Wel kun je er voor zorgen dat in deze browsers de PWA een “app-like experience”heeft. Denk hierbij aan een splash screen bij het opstarten of een custom icoon wanneer je de applicatie handmatig toevoegt aan het startscherm. Dit kun je realiseren door de webapp om te zetten naar een PWA. Echter de manieren om dit crossplatform te laten werken verschilt ook.
 
