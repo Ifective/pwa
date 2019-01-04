@@ -38,7 +38,7 @@ Om de gebruiker de mogelijkheid te bieden de webapplicatie toe te voegen aan zij
 - Service workers moeten geregistreerd worden met een fetch event handler
 
 
-Wanneer aan deze criteria word voldaan zal Google Chrome een beforeinstallprompt event afvuren welke gebruikt kan worden de gebruiker een bericht te sturen met daarin de vraag of deze de pwa wil toe voegen aan het startscherm.
+Wanneer aan deze criteria word voldaan zal Google Chrome een `beforeinstallprompt` event afvuren welke gebruikt kan worden de gebruiker een bericht te sturen met daarin de vraag of deze de pwa wil toe voegen aan het startscherm.
 
 **N.B.** *Belangrijk om te rekening mee te houden is dat browsers zoals Edge, Firefox, Opera, Safari, Samsung internet en UC Browser andere criteria hanteren en het beforeinstallprompt event niet triggeren. Zoals op de “ afbeelding 1” is te zien is de support voor dit event laag en word dit momenteel alleen ondersteund in Chrome en Android browser.*
 
@@ -129,7 +129,7 @@ ngrok word gestart en zoals je kunt zien op “afbeelding 5” krijgen we een HT
 
 ***Afbeelding. 6***
 
-Deze melding “serviceWorkers toevoegen aan startscherm” word default getoont. Dit omdat er word voldaan aan de criteria welke aan een pwa binnen Chrome worden gesteld. Het probleem is alleen dat wanneer de gebruiker besluit deze melding weg te klikken de vraag of de gebruiker de app wil toevoegen aan het startscherm pas 3 maanden later opnieuw word gesteld.
+Deze melding “serviceWorkers toevoegen aan startscherm” word default getoont. Dit omdat er word voldaan aan de criteria welke aan een pwa binnen Chrome worden gesteld.
 
 ## Een custom install knop toevoegen
 
@@ -139,7 +139,7 @@ Vanaf Chrome versie 68, is er een event wat elke keer word getriggerd wanneer de
 
 Door gebruik te maken van een knop word de keuze over gelaten aan de gebruiker. Deze kan nu zelf bepalen wanneer hij de applicatie wil toevoegen aan het startscherm. 
 
-***N.B*** *Standaard heeft Chrome PWA functionaliteiten uitgeschakeld. Wanneer je wilt experimenteren met een custom knop zul je eerst binnen Chrome de PWA functionaliteiten in moeten schakelen. Dit is omdat de nieuwste versie van Chrome deze PWA functionaliteiten standard heeft uitgeschakeld. Momenteel vallen deze nog onder de “experimentele settings”. Om gebruik te maken van deze functionaliteiten en om te testen of de knop werkt kun je het volgende doen:*
+***N.B*** *Standaard heeft Chrome PWA functionaliteiten uitgeschakeld. Wanneer je wilt experimenteren met een custom "add-to-homescreen" knop zul je eerst binnen Chrome de PWA functionaliteiten in moeten schakelen. Dit is omdat de nieuwste versie van Chrome deze PWA functionaliteiten standard heeft uitgeschakeld. Momenteel vallen deze nog onder de “experimentele settings”. Om gebruik te maken van deze functionaliteiten en om te testen of de knop werkt kun je het volgende doen:*
 
 - ga naar chrome://flags
 - enable Bypass user engagement checks
@@ -147,14 +147,12 @@ Door gebruik te maken van een knop word de keuze over gelaten aan de gebruiker. 
 
 ## Conclusie
 
-Om terug te komen op de vraag of het mogelijk is om een Angular applicatie om te zetten naar een PWA een is het antwoord ja, maar...
+Om terug te komen op de vraag of het mogelijk is om een Angular applicatie om te zetten naar een PWA zodat we Mobiele en tablet gebruikers de mogelijkheid kunnen bieden de applicatie toe te voegen aan zijn/haar startscherm is het antwoord ja, maar...
 
-Momenteel word het beforeinstallpromptevent namelijk alleen in Chrome en Android browsers ondersteund. De overige browsers zoals Edge, Firefox, Opera, Safari, Samsung internet en UC Browser hanteren nl. andere criteria en hier word het `beforeinstallpromptevent` niet
-
-aangeroepen. Het is daarom bijvoorbeeld ***niet*** mogelijk om in deze browsers een “custom knop” toe te voegen waarmee de gebruiker de applicatie kan toevoegen aan zijn startscherm.
+Momenteel word het beforeinstallpromptevent namelijk alleen in Chrome en Android browsers ondersteund. De overige browsers zoals Edge, Firefox, Opera, Safari, Samsung internet en UC Browser hanteren nl. andere criteria en hier word het `beforeinstallpromptevent` niet aangeroepen. Het is daarom bijvoorbeeld ***niet*** mogelijk om in deze browsers een “custom "add-to-homescreen" knop” toe te voegen waarmee de gebruiker de applicatie kan toevoegen aan zijn startscherm.
 
 Wel kun je er voor zorgen dat in deze browsers de PWA een “app-like experience”heeft. Denk hierbij aan een splash screen bij het opstarten of een custom icoon wanneer je de applicatie handmatig toevoegt aan het startscherm. Dit kun je realiseren door de webapp om te zetten naar een PWA. Echter de manieren om dit crossplatform te laten werken verschilt ook.
 
-Een custom install knop is een mooie manier om gebruikers te verleiden de applicatie toe te voegen aan hun startscherm waardoor deze meer word gebruikt. Echter is de ondersteuning hiervoor nog laag en zullen we moeten wachten todat ook de andere browsers het `beforeinstallpromptevent` kunnen herkennen. Voorlopig zul je per browser moeten checken welke mogelijkheden deze bied om een een “app-like experience” te simuleren.
+Voorlopig zul je per browser moeten checken welke mogelijkheden deze bied om een een “app-like experience” te simuleren.
 
 Wilt u meer informatie hierover? Neem dan contact met ons op via telefoon: 085-0443333 of via email: [info@ifective.nl](mailto:info@ifective.nl).
