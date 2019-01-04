@@ -43,7 +43,7 @@ Wanneer aan deze criteria word voldaan zal Google Chrome een beforeinstallprompt
 
 Wanneer een bezoeker in Chrome voor de tweede keer in twee weken tijd de PWA bezoekt, krijg hij een ‘Add to homescreen’ melding. Door hier op te klikken, wordt de PWA door middel van een snelkoppeling toegevoegd aan het startscherm.
 
-![support](Images/ondersteuning-event.png "ondersteuning beforeinstallprompt event in de verschillende browsers")
+![support](images/ondersteuning-event.png "ondersteuning beforeinstallprompt event in de verschillende browsers")
 ***Afbeelding. 1***
 
 
@@ -70,7 +70,7 @@ Als laatste moet het project nog gebouwd worden ***( ng build –prod )*** dit o
 
 Zoals je hieronder op “afbeelding 2” kunt zien staan er na het uitvoeren van het build commando nu 2 extra files in de dist folder, nl. ngsw-worker.js en ngsw-json
 
-![prod-build](Images/folder-na-prod-build.png "dist folder na het bouwen van een production build")
+![prod-build](images/folder-na-prod-build.png "dist folder na het bouwen van een production build")
 
 ***Afbeelding. 2***
 
@@ -96,12 +96,12 @@ Wanneer we navigeren naar localhost:8080 kun je zien dat de applicatie normal op
 
 Open de inspector en navigeer naar de tab netwerk. Hier vind je een checkbox offline. Vink deze aan en ververs de pagina. Als alles goed is gegaan word de applicatie ook zonder internetverbinding geladen. Dit komt omdat de service worker de bestanden heeft gecached.
 
-![Chrome Inspector](Images/inspector-serviceworker.png "Chrome inspector: de service worker in actie")
+![Chrome Inspector](images/inspector-serviceworker.png "Chrome inspector: de service worker in actie")
 ***Afbeelding. 3***
 
 Zoals we kunnen zien op “afbeelding 3” size kolom, worden de bestanden opgehaald door de service worker (from serviceWorker) Dit betekend dat service workers werken. Wat de service worker cached word bepaald door ngsw-config.json. In dit bestand kun je aangeven de welke paden / bestanden gecached moeten worden.
 
-![Application Tab](Images/inspector-application-tab.png "Chrome inspector application tab")
+![Application Tab](images/inspector-application-tab.png "Chrome inspector application tab")
 ***Afbeelding. 4***
 
 ***N.B.*** In de inspector onder de application tab “afbeelding 4” is meer informatie te vinden over de service worker. Ook vind je hier informatie over het manifest, storage en caching.
@@ -116,12 +116,12 @@ Als alles goed is gegaan draait de HTTP server nu lokaal. Om service workers te 
 - Als ngrok gedownload is moeten we de locale url publiekelijk maken dit doen we met
 het volgende commando: ngrok `http 8080 -host-header="localhost:8080"`
 
-![NGrok](Images/ng-rok.png "ngrok in actie")
+![NGrok](images/ng-rok.png "ngrok in actie")
 ***Afbeelding. 5***
 
 ngrok word gestart en zoals je kunt zien op “afbeelding 5” krijgen we een HTTPS url terug. Wanneer we dit adres bekijken op een mobiel apparaat krijgen we naar 30 seconden netjes de melding “afbeelding 6” of we de pwa toe willen voegen aan ons startscherm.
 
-![PWA Message](Images/pwa-add-to-home-msg.png "Melding of we de pwa toe willen voegen aan ons startscherm")
+![PWA Message](images/pwa-add-to-home-msg.png "Melding of we de pwa toe willen voegen aan ons startscherm")
 
 ***Afbeelding. 6***
 
@@ -153,19 +153,19 @@ Wanneer je nu op de knop klikt gebeurt er op desktop nog niks. Dit is omdat de n
 - enable Bypass user engagement checks
 - enable Desktop PWAs
 
-![Chrome Flags](Images/chrome-flags.png "chrome flags,settings pagina van chrome: hier kun je experimentele settings aan en uit zetten")
+![Chrome Flags](images/chrome-flags.png "chrome flags,settings pagina van chrome: hier kun je experimentele settings aan en uit zetten")
 
 ***Afbeelding. 7***
 
 Wanneer je nu op de knop klikt zie je de volgende melding op desktop
 
-![Chrome Desktop Message](Images/melding-pwa-desktop.png "Melding op desktop of de gebruiker de pwa wil installeren. Deze melding is default geblocked en kan alleen worden getriggerd door de hiervoor genoemde flags op enabled te zetten")
+![Chrome Desktop Message](images/melding-pwa-desktop.png "Melding op desktop of de gebruiker de pwa wil installeren. Deze melding is default geblocked en kan alleen worden getriggerd door de hiervoor genoemde flags op enabled te zetten")
 
 ***Afbeelding. 8***
 
 Dezelfde melding alleen nu op mobiel
 
-![Chrome Mobiel Message](Images/melding-pwa-mobile.png "chrome flags,settings pagina van chrome: hier kun je experimentele settings aan en uit zetten")
+![Chrome Mobiel Message](images/melding-pwa-mobile.png "chrome flags,settings pagina van chrome: hier kun je experimentele settings aan en uit zetten")
 
 ## Conclusie
 
