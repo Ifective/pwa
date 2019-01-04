@@ -40,7 +40,7 @@ Om de gebruiker de mogelijkheid te bieden de webapplicatie toe te voegen aan zij
 
 Wanneer aan deze criteria word voldaan zal Google Chrome een `beforeinstallprompt` event afvuren welke gebruikt kan worden de gebruiker een bericht te sturen met daarin de vraag of deze de pwa wil toe voegen aan het startscherm.
 
-**N.B.** *Belangrijk om te rekening mee te houden is dat browsers zoals Edge, Firefox, Opera, Safari, Samsung internet en UC Browser andere criteria hanteren en het beforeinstallprompt event niet triggeren. Zoals op de “ afbeelding 1” is te zien is de support voor dit event laag en word dit momenteel alleen ondersteund in Chrome en Android browser.*
+**N.B.** *Belangrijk om te rekening mee te houden is dat browsers zoals Edge, Firefox, Opera, Safari, Samsung internet en UC Browser andere criteria hanteren en het beforeinstallprompt event niet triggeren. Zoals op de “ afbeelding 1” is te zien is de support voor dit event laag en word dit momenteel alleen ondersteunt in Chrome en Android browser.*
 
 Wanneer een bezoeker in Chrome voor de tweede keer in twee weken tijd de PWA bezoekt, krijg hij een ‘Add to homescreen’ melding. Door hier op te klikken, wordt de PWA door middel van een snelkoppeling toegevoegd aan het startscherm.
 
@@ -58,15 +58,15 @@ Hoe zorgen we er voor dat onze Angular applicatie voldoet aan deze criteria, wat
 
 ***Dit commando:***
 - voegt de service worker package toe aan het angular project
-- Ondersteund build support voor service workers binnen de CLI
+- Ondersteunt build support voor service workers binnen de CLI
 - Voegt de property ***serviceWorker: true*** toe aan de prod build (angular.json)
-- Registreerd service workers in app module
+- Registreert service workers in app module
     - Wanneer je een base-href gebruikt moet je het pad veranderen van /ngsw- worker naar ./ngsw-worker
 - Update de index.html
-    - Er word een link toegevoegd naar manifest.json 
-    - Er word een meta tag toegevoegd ,<meta name=”theme-color”>`
-- Er word een icons folder aan de assets toegevoegd
-- Er word een service worker configuratie bestand gegenereerd (ngsw-config.json)
+    - Er wordt een link toegevoegd naar manifest.json 
+    - Er wordt een meta tag toegevoegd ,<meta name=”theme-color”>`
+- Er wordt een icons folder aan de assets toegevoegd
+- Er wordt een service worker configuratie bestand gegenereerd (ngsw-config.json)
 
 Als laatste moet het project nog gebouwd worden ***( ng build –prod )*** dit omdat service workers alleen werken in de production build. Als alles goed is gegaan is er nu een build gemaakt van het project en staan de bestanden in de in de ***dist*** folder.
 
@@ -92,7 +92,7 @@ gebruiker m.b.v de proxy flag: http-server -c-1 --proxy `http://localhost:9000`
 
 Nu de server draait kun je het adres ( localhost:8080 ) invoeren in de browers. De applicatie zal laden zoals normal ook het geval met ng-serve is.
 
-***N.B.*** *Wanneer je service workers wil testen is het een goed idee om dit in incognito modus te doen. Dit om er zeker van te zijn dat service workers niet word gecached*
+***N.B.*** *Wanneer je service workers wilt testen is het een goed idee om dit in incognito modus te doen. Dit om er zeker van te zijn dat service workers niet word gecached*
 
 Wanneer we navigeren naar localhost:8080 kun je zien dat de applicatie normal opstart. Om de service workers te testen moeten we de netwerkverbinding onderbreken en een offline omgeving simuleren. Dit kunnen we doen met behulp van de inspector.
 
@@ -102,7 +102,7 @@ Open de inspector en navigeer naar de tab netwerk. Hier vind je een checkbox off
 
 ***Afbeelding. 3***
 
-Zoals we kunnen zien op “afbeelding 3” size kolom, worden de bestanden opgehaald door de service worker (from serviceWorker) Dit betekend dat service workers werken. Wat de service worker cached word bepaald door ngsw-config.json. In dit bestand kun je aangeven de welke paden / bestanden gecached moeten worden.
+Zoals we kunnen zien op “afbeelding 3” size kolom, worden de bestanden opgehaald door de service worker (from serviceWorker) Dit betekent dat service workers werken. Wat de service worker cached word bepaald door ngsw-config.json. In dit bestand kun je aangeven de welke paden / bestanden gecached moeten worden.
 
 ![Application Tab](images/inspector-application-tab.png "Chrome inspector application tab")
 
