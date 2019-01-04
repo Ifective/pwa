@@ -135,12 +135,11 @@ Deze melding “serviceWorkers toevoegen aan startscherm” word default getoont
 
 Om er voor te zorgen dat de gebruiker zelf kan bepalen wanneer hij de PWA toevoegd aan zijn startscherm moeten we een knop toevoegen die deze functionaliteit afhandeld.
 
-Vanaf Chrome versie 68, is er een event wat elke keer word getriggerd wanneer de gebruiker de PWA opstart. Dit is het beforeinstallprompt event. Dit event kan worden gebruikt om een custom install button te maken waarmee de applicatie kan worden toegevoegd aan het startscherm van de gebruiker.
+Vanaf Chrome versie 68, is er een event wat elke keer word getriggerd wanneer de gebruiker de PWA opstart. Dit is het `beforeinstallprompt` event. Dit event kan worden gebruikt om een custom install button te maken waarmee de applicatie kan worden toegevoegd aan het startscherm van de gebruiker.
 
-Door gebruik te maken van een knop word de keuze over gelaten aan de gebruiker. Deze kan nu zelf bepalen wanneer hij de applicatie wil toevoegen aan het startscherm. In de bijgevoegde bestanden is deze code te bekijken.
+Door gebruik te maken van een knop word de keuze over gelaten aan de gebruiker. Deze kan nu zelf bepalen wanneer hij de applicatie wil toevoegen aan het startscherm. 
 
-
-***N.B*** *Standaard heeft Chrome PWA functionaliteiten uitgeschakeld. Wanneer je nu op de knop klikt gebeurt er op desktop nog niks. Dit is omdat de nieuwste versie van Chrome deze pwa functionaliteiten standard heeft uitgeschakeld. Momenteel vallen deze nog onder de “experimentele settings”. Om gebruik te maken van deze functionaliteiten en om te testen of de knop werkt kun je het volgende doen:*
+***N.B*** *Standaard heeft Chrome PWA functionaliteiten uitgeschakeld. Wanneer je wilt experimenteren met een custom knop zul je eerst binnen Chrome de PWA functionaliteiten in moeten schakelen. Dit is omdat de nieuwste versie van Chrome deze PWA functionaliteiten standard heeft uitgeschakeld. Momenteel vallen deze nog onder de “experimentele settings”. Om gebruik te maken van deze functionaliteiten en om te testen of de knop werkt kun je het volgende doen:*
 
 - ga naar chrome://flags
 - enable Bypass user engagement checks
