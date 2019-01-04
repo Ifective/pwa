@@ -185,3 +185,4 @@ Wel kun je er voor zorgen dat in deze browsers de PWA een “app-like experience
 
 Een custom install knop is een mooie manier om gebruikers te verleiden de applicatie toe te voegen aan hun startscherm waardoor deze meer word gebruikt. Echter is de ondersteuning hiervoor nog laag en zullen we moeten wachten todat ook de andere browsers het `beforeinstallpromptevent` kunnen herkennen. Voorlopig zul je per browser moeten checken welke mogelijkheden deze bied om een een “app-like experience” te simuleren.
 
+Wilt u meer informatie hierover? Neem dan contact met ons op via telefoon: 085-0443333 of via email: [info@ifective.nl](mailto (idea) info@ifective.nl).
